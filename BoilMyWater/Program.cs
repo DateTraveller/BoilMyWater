@@ -1,5 +1,4 @@
-﻿using BoilMyWater._1_2.简介和基础;
-using System;
+﻿using System;
 using System.IO;
 using log4net;
 using log4net.Config;
@@ -11,7 +10,16 @@ namespace BoilMyWater
     {
         static void Main(string[] args)
         {
-            InitLog4Net();
+            //InitLog4Net();
+            //MethodFortheFirst();
+
+        }
+
+        private static void InitLog4Net()
+        {
+            ILoggerRepository repository = LogManager.CreateRepository("NETCoreRepository");
+            var logCfg = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config");
+            XmlConfigurator.ConfigureAndWatch(repository, logCfg);
             var logger = LogManager.GetLogger(typeof(Program));
 
             logger.Info("消息");
@@ -20,14 +28,6 @@ namespace BoilMyWater
             logger.Fatal("错误");
 
             Console.ReadLine();
-
-        }
-
-        private static void InitLog4Net()
-        {
-            ILoggerRepository repository = LogManager.CreateRepository("NETCoreRepository");
-            var logCfg = new FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config");
-            XmlConfigurator.ConfigureAndWatch(repository,logCfg);
         }
 
         private static void MethodFortheFirst()
