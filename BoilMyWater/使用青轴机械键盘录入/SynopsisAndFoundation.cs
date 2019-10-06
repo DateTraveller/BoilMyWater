@@ -112,13 +112,63 @@ namespace BoilMyWater
         Double  Vs  Decimal
         double基于2适用于科学计算，例如计算坐标
         Decimal基于10 适用于财务计算或者人造数据
+                        
+        ------------ 分割线 ------------
+
+        & 按位与 1与1为1    1与0为0
+        |   按位或 1或1为1    1或0为1 
+                                
+        ------------ 分割线 ------------
+        
+        字符串
+        @做前缀：不支持转义字符，支持多行字符串
+        $做前缀： 可以包含表达式（在{}内） 默认支持单行字符串
+        $@一起用
+                                        
+        ------------ 分割线 ------------
+        
+        数组
+        创建数组时，所有的元素都会被初始化，其值为该类型的默认值
+        类型的默认值就是内存按位归零的结果[char 的默认值是'\0']
+        矩形数组：代表n维内存块
+        使用逗号分割维度 int[3,3]
+        GetLength(维度)
+        循环方式：
+        static void Main()
+        {
+            int[,] matrix = new int[3, 3];
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int i = 0; i < matrix.GetLength(1); i++)
+                {
+                    matrix[i, j] = i * 2 + j;
+
+                    Console.WriteLine(matrix[i, j]);
+                }
+            }
+        }
+        交错数组：元素类型为数组的数组
+        使用连续的中括号来声明和代表不同维度
+        int[][] matrix=new int[3][];
+        内层维度没有具体指明，内层数组可以是任意长度
+                                       
+        ------------ 分割线 ------------
+        
+        方法参数传递方式：
+        1、按值传递argument
+        传进方法的时候把参数的值复制一份
+        2、按值传递引用类型的argument 
+        复制的是引用，而不是对象
+        3、按引用传递ref/out
+        ref进入函数前被赋值，out离开函数前被赋值
+        2.12
         */
         static void Main()
         {
-            
+
         }
     }
-    /// <summary>
+    /// <summary> 
     /// 自定义类型
     /// </summary>
     public class UnitConverter
