@@ -35,5 +35,18 @@ namespace BoilMyWater
             UnitConverter uc = new UnitConverter(10);
             Console.WriteLine(uc.Convert(2));
         }
+
+    }
+    public class UnitConverter
+    {
+        int ratio;// Field 字段
+        public UnitConverter(int unitRatio)//Constructor 构造函数
+        {
+            ratio = unitRatio;
+        }
+        public int Convert(int unit)// Method 方法
+        {
+            return unit * ratio;
+        }
     }
 }
