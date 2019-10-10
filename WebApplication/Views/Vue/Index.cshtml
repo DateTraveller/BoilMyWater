@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<script src="/lib/Vue/vue.js"></script>
+<h1>Hello Vue</h1>
+<div id="app-1">
+    <ol>
+        <todo-item v-for="item in groceryList"
+                   v-bind:todo="item"
+                   v-bind:key="item.id"></todo-item>
+    </ol>
+</div>
+<script type="text/javascript">
+    Vue.component('todo-item',{
+        props:['todo'],
+        template:'<li>{{ todo.text }}+{{todo.id}}</li>'
+    })
+    var app1=new Vue({
+        el:"#app-1",
+        data:{
+            groceryList:[
+                {id:0,text:"蔬菜1"},
+                {id:1,text:"蔬菜2"},
+                {id:3,text:"蔬菜3"}
+            ]
+        }
+    })
+</script>
