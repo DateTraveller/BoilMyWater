@@ -2,6 +2,11 @@
     ViewData["Title"] = "Index";
 }
 <script src="/lib/Vue/vue.js"></script>
+<style>
+    .RedBorder {
+        border:solid 1px red;
+    }
+</style>
 <h1>Hello Vue</h1>
 <div id="app-1">
     <ol>
@@ -12,7 +17,7 @@
 </div>
 
 <div id="app-2">
-    <p>Original message: "{{ message }}"</p>
+    <p v-bind:class="{RedBorder}">Original message: "{{ message }}"</p>
     <p>Computed reversed message: "{{ reversedMessage }}"</p>
 </div>
 
@@ -39,8 +44,9 @@
     var app2 = new Vue({
       el: '#app-2',
       data: {
-        message: 'Hello'
-      },
+          message: 'Hello',
+          RedBorder:"RedBorder"
+        },
       computed: {
         // 计算属性的 getter
         reversedMessage: function () {

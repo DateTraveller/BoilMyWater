@@ -8,5 +8,14 @@ namespace WebApplication.Controllers
         {
             return View();
         }
+
+        public IActionResult WatchExamples()
+        {
+            return View();
+        }
+        public IActionResult Component()
+        {
+            return View();
+        }
     }
 }
