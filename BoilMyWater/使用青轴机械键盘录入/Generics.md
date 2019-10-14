@@ -47,3 +47,21 @@ Class IntStack<T> : Stack<Int>    {...}
 class List<T>                           {...}
 Class KeyedList<T,Tkey> : List<T>       {...}
 ```
+#### 自引用的泛型声明
+* 在封闭类型参数的时候，该类型可以把它自己当做具体的类型。
+```
+public interface IEquatable<T> { bool Equals(T obj); }
+public class Ballon : IEquatable<Ballon>
+{
+    public string Color { get; set; }
+    public int CC { get; set; }
+
+    public bool Equals(Ballon obj)
+    {
+        if (obj == null)
+            return false;
+        return obj.Color == Color && obj.CC == CC;
+    }
+}
+```
+#### 自引用的泛型声明
