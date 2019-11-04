@@ -20,3 +20,29 @@ public class BroadCaster
 ```
 * BroadCaster类型里面的代码拥有对PriceChanged的完全访问权，在这里就可以把它当成委托
 * 而BroadCaster类型之外的代码只能对PriceChanged这个event执行+=或者-=操作
+#### 标准的事件模式
+* 为编写事件，.net定义了一个标准的模式。
+* System.EventArgs，一个预定义的框架类，除了静态的Empty属性之外没有其他成员。
+* EventArgs是为事件传递信息的类的基类。
+#### 为事件选择或定义委托
+* 返回类型是void；
+* 接收两个参数，第一个参数类型是object，第二个参数类型是EventArgs的子类。第一个参数表示事件的广播者，第二个参数包含需要传递的信息。
+* 名称必须以EventHandler结尾。
+* Framework定义了一个泛型委托System.EventHandler\<T>，它满足上述规则
+```
+public delegate void EventHandler<TEventArgs>(object source,TEventArgs e) where TEventArgs:EventArgs
+```
+#### 可触发事件的protected virtual方法
+* 方法名必须和事件一致，前面这加上On，接收一个EventArgs参数
+```
+public class Stock
+{
+    ~~~
+    public event EventHandler<PriceChangedEventArgs> PriceChanged;
+    Protected virtual OnPriceChanged(PriceChangedEventArgs e)
+    {
+        if(PriceChanged != null) PriceChanged(this,e);
+    }
+
+}
+```
