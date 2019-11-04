@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoilMyWater", "BoilMyWater\BoilMyWater.csproj", "{669AD40C-48AE-4E92-BC57-1F6029F95AB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{A1BC5754-3DF7-4E14-8DDB-E951ADA3FF8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication", "WebApplication\WebApplication.csproj", "{A1BC5754-3DF7-4E14-8DDB-E951ADA3FF8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{4200ADDD-E35B-4BC1-B335-F9A3CC4EBDB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A1BC5754-3DF7-4E14-8DDB-E951ADA3FF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1BC5754-3DF7-4E14-8DDB-E951ADA3FF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1BC5754-3DF7-4E14-8DDB-E951ADA3FF8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4200ADDD-E35B-4BC1-B335-F9A3CC4EBDB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4200ADDD-E35B-4BC1-B335-F9A3CC4EBDB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4200ADDD-E35B-4BC1-B335-F9A3CC4EBDB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4200ADDD-E35B-4BC1-B335-F9A3CC4EBDB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
